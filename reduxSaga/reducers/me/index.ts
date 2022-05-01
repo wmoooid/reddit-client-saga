@@ -1,8 +1,16 @@
+import { MeResponseType } from '@/types/me';
 import { AnyAction } from 'redux';
 import { LOAD_ME, LOAD_ME_FAILURE, LOAD_ME_SUCCESS } from './actions';
 
+export interface MeState {
+  noLogin: boolean;
+  isLoading: boolean;
+  isError: Error | null;
+  data: MeResponseType;
+}
+
 export const initialMeState = {
-  isSignedIn: false,
+  noLogin: true,
   isLoading: false,
   isError: null,
   data: {},
@@ -20,7 +28,7 @@ export default function meReducer(state = initialMeState, action: AnyAction) {
     case LOAD_ME_SUCCESS: {
       return {
         ...state,
-        isSignedIn: true,
+        noLogin: false,
         isLoading: false,
         data: action.payload,
       };

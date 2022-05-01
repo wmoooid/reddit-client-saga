@@ -4,7 +4,8 @@ import { getCookie } from 'cookies-next';
 import { AnyAction } from 'redux';
 import { apply, call, fork, put, select, take, takeEvery } from 'redux-saga/effects';
 import { initialMeState } from 'reduxSaga/reducers/me';
-import { LOAD_ME, LOAD_ME_SUCCESS } from 'reduxSaga/reducers/me/actions';
+import { LOAD_ME, LOAD_ME_FAILURE, LOAD_ME_SUCCESS } from 'reduxSaga/reducers/me/actions';
+import { selectMe } from 'reduxSaga/reducers/me/selectors';
 
 const token = getCookie(`token`);
 
@@ -13,22 +14,27 @@ export function* loadMe() {
     method: 'get',
     headers: { Authorization: `bearer ${token}` },
   });
-  const data: MeResponseType = yield apply(response, response.json, []);
-  console.log(data);
-
-  yield put({
-    type: LOAD_ME_SUCCESS,
-    payload: data,
-  });
+  if (response.ok) {
+    const data: MeResponseType = yield apply(response, response.json, []);
+    yield put({
+      type: LOAD_ME_SUCCESS,
+      payload: data,
+    });
+  } else {
+    yield put({
+      type: LOAD_ME_FAILURE,
+      payload: response.status,
+    });
+  }
 }
 
 export function* loadMeOnRouterEnter() {
   while (true) {
     const action: AnyAction = yield take(LOCATION_CHANGE);
 
-    const state: typeof initialMeState = yield select((s) => s.me);
+    const state: typeof initialMeState = yield select(selectMe);
 
-    if (!state.isSignedIn) {
+    if (state.noLogin) {
       yield put({
         type: LOAD_ME,
       });
