@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.viewPicker {
+  display: flex;
+  flex-direction: row;
+}
+
+.viewPickerIcon {
+  display: flex;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.viewPickerIcon svg {
+  position: relative;
+  z-index: 2;
+}
+
+.viewPickerIcon:hover::before {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  bottom: -0.75rem;
+  left: -0.75rem;
+  background-color: var(--grey97);
+  border-radius: 50%;
+}
+
+.viewPickerIcon:active svg rect {
+  stroke: var(--accent);
+}

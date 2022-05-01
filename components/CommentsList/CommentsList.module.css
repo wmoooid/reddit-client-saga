@@ -1,0 +1,14 @@
+.container {
+  margin-top: 6rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.list {
+  margin-top: 2rem;
+}

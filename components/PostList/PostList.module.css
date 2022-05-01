@@ -1,0 +1,39 @@
+.list {
+  margin-top: 3rem;
+  border: 1px solid var(--grey93);
+  border-radius: 0.25rem;
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  background-color: var(--grey93);
+}
+
+.moreButton {
+  width: 100%;
+  height: 3rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  background-color: var(--background);
+  border: 1px solid var(--grey93);
+  border-radius: 0.25rem;
+}
+
+.moreLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  background-color: var(--grey93);
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .list {
+    margin-top: 1.5rem;
+  }
+}

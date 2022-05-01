@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.searchIcon {
+  margin-right: 0.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.searchText {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+  background-color: var(--background);
+}
+
+.searchText:hover {
+  opacity: 0.75;
+}
+
+.searchText::placeholder {
+  color: var(--grey75);
+}
+
+.searchText:focus-visible {
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+    position: static;
+  }
+}

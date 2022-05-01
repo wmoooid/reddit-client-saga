@@ -1,0 +1,142 @@
+/* PostList */
+.postDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.title:hover {
+  opacity: 0.75;
+}
+
+.creatorInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.creatorAvatar {
+  display: block;
+  position: relative;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.75rem;
+}
+
+.creatorAvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subreddit {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.subreddit:hover {
+  opacity: 0.75;
+}
+
+.creatorDate {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--grey75);
+}
+
+/* Tile */
+.postDetailsTile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+/* PostPage */
+.postDetailsPage {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.creatorInfoPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.creatorDatePage {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--grey75);
+}
+
+.titlePage {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.35;
+  font-weight: 600;
+  text-align: left;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .postDetailsPage {
+    margin-bottom: 3rem;
+  }
+
+  .titlePage {
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  .creatorInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .creatorInfoPage {
+    margin-bottom: 2rem;
+  }
+
+  .creatorDate {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}

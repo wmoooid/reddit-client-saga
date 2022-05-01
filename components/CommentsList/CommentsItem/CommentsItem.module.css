@@ -1,0 +1,84 @@
+/* Paragraph crutch */
+.body p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  margin-right: 0.75rem;
+}
+
+.rightSide {
+  margin-bottom: 0.5rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  height: 1.5rem;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background-color: var(--grey93);
+}
+
+.line_hl {
+  width: 1px;
+  height: 100%;
+  background-color: var(--grey75);
+}
+
+.item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  margin-bottom: 0.5rem;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--grey97);
+  overflow: hidden;
+}
+
+.author {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--grey75);
+}
+
+.created {
+  margin-left: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--grey75);
+}
+
+.body {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.replies {
+  margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+  .created {
+    display: none;
+  }
+}

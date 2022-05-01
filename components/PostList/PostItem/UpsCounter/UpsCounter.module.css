@@ -1,0 +1,39 @@
+/* Ups */
+.upsCounter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3rem;
+}
+
+.upsUp,
+.upsDown,
+.upsUp_active,
+.upsDown_active {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.upsUp_active svg path,
+.upsDown_active svg path {
+  fill: var(--accent);
+}
+
+.upsCount {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.upsUp:hover svg path,
+.upsDown:hover svg path {
+  fill: var(--accent-light);
+}
+
+@media (max-width: 720px) {
+  .upsCounter {
+    display: none;
+  }
+}

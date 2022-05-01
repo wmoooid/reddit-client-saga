@@ -1,0 +1,120 @@
+.box {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.divider {
+  display: block;
+  flex: none;
+  height: 7rem;
+  width: 2rem;
+  /* margin: 0 2.5rem; */
+  /* background-color: var(--grey93); */
+}
+
+.space {
+  display: block;
+  width: 2rem;
+}
+
+/* Tile view */
+.tileBox {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem;
+}
+
+.tileTop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tileLeft {
+  display: flex;
+  flex-direction: row;
+}
+
+.tileDivider {
+  display: block;
+  flex: none;
+  width: 1px;
+  margin: 0 2rem;
+  background-color: var(--grey93);
+}
+
+/* PostPage */
+.boxPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.topSide {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.dividerPage {
+  display: block;
+  align-self: stretch;
+  width: 1px;
+  margin: 0 3rem;
+  background-color: var(--grey93);
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .dividerPage {
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .box {
+    padding: 1.5rem;
+  }
+
+  .tileBox {
+    padding: 1.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .dividerPage {
+    display: none;
+  }
+
+  .tileDivider {
+    display: none;
+  }
+
+  .space {
+    display: block;
+    width: 1.5rem;
+  }
+}
