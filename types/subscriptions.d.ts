@@ -1,5 +1,5 @@
 export type SubscriptionsResponseChildren = {
-  kind: string;
+  kind: 't5';
   data: {
     user_flair_background_color: null;
     submit_text_html: string;

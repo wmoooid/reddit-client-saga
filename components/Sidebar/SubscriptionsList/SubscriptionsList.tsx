@@ -1,15 +1,16 @@
-import useSubscriptions from '@/hooks/useSubscriptions';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { selectSubscriptions } from 'reduxSaga/reducers/subscriptions/selectors';
 import styles from '../Sidebar.module.css';
 
 export const SubscriptionsList: React.FC = () => {
-  const { subscriptions } = useSubscriptions();
+  const subscriptions = useSelector(selectSubscriptions);
 
   return (
     <nav className={styles.nav}>
       <strong className={styles.heading}>Subscriptions</strong>
       <ul className={styles.list}>
-        {subscriptions.map((item) => (
+        {subscriptions.data.map((item) => (
           <Link key={item.data.id} href={item.data.url} shallow={true}>
             <li className={styles.item}>
               <img src={item.data.community_icon || item.data.icon_img} className={styles.itemIcon} />
