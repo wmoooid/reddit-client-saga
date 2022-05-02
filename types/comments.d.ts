@@ -1,5 +1,3 @@
-import { ObjectHTMLAttributes } from 'react';
-
 export type CommentsResponsePostInfoType = {
   kind: 't3';
   data: CommentsResponsePostInfoDataType;
@@ -270,3 +268,5 @@ export type CommentsResponseCommentsType = {
     before: null;
   };
 };
+
+export type CommentsResponse = [CommentsResponsePostInfoType, CommentsResponseCommentsType];
